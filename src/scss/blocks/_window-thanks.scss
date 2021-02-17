@@ -1,0 +1,29 @@
+.window-thanks {
+    max-width: 800px;
+    min-height: 300px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin: 0 auto;
+    margin-top: 50px;
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 40px;
+        color: red;
+        cursor: pointer;
+    }
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.125rem;
+    }
+    &__img {
+        margin: 0 auto;
+        margin-top: 20px;
+        max-width: 600px;
+        & img {
+            width: 100%;
+        }
+    }
+}

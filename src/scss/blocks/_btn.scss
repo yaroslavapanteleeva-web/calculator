@@ -16,5 +16,18 @@
         border: none; 
         outline: none;
     }
+    &__ok {
+        width: 150px;
+        color: #fff;
+        background-color: $main-color;
+        &:hover {
+            border: 2px solid $main-color;
+            background-color: #fff;
+            color: $main-color;
+        }
+    }
+    &__cancel {
+        width: 150px;
+    }
     
 }
