@@ -1,0 +1,59 @@
+@import '../base/variables.scss';
+
+.field {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    &_size_large {
+        height: 60px;
+    }
+    &_size_small {
+        width: 150px;
+    }
+    &__entry {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+        outline: none;
+        padding: 13px 15px;
+        z-index: 1;
+        background: none;
+        color: rgba(31, 32, 65, 0.75);
+        font-size: .75rem;
+    }
+    &__label {
+        position: absolute;
+        left: 15px;
+        top: 11px;
+        padding: 0 .25rem;
+        background-color: #fff;
+        font-weight: 400;
+        font-size: .875rem;
+        color: rgba(31, 32, 65, 0.25);
+        transition: .3s;
+    }
+}
+
+.field__entry:focus + .field__label {
+    top: -.5rem;
+    left: .8rem;
+    color: $main-color;
+    font-weight: 700;
+    z-index: 10;
+    font-size: .75rem;
+}
+.field__entry:not(:placeholder-shown).field__entry:not(:focus) + .field__label {
+    top: -.5rem;
+    left: .8rem;
+    z-index: 10;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.field__entry:focus {
+    border: 1px solid $main-color;
+}

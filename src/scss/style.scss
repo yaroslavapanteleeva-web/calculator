@@ -10,3 +10,11 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+@import './blocks/main.scss';
+@import './blocks/heading.scss';
+@import './blocks/form.scss';
+@import './blocks/subheading.scss';
+@import './blocks/field.scss';
+@import './blocks/btn.scss';
+@import './blocks/figure.scss';

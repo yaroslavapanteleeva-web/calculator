@@ -1,0 +1,23 @@
+.main {
+    max-width: 1920px;
+    height: 100%;
+    padding: 65px 30px 65px 70px;
+    &__wrap {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        column-gap: 50px;
+    }
+    &__form {
+        max-width: 1200px;
+        min-height: 300px;
+    }
+    &__img {
+        max-width: 600px;
+        justify-self: end;
+        & img {
+            width: 100%;
+            
+        }
+    }
+}

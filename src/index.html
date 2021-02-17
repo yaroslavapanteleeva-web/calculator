@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webpack template</title>
+    <title>Calculator</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <main class="main">
+        <h1 class="heading">Калькулятор стоимости доставки</h1>
+        <div class="main__wrap">
+            <section class="main__form form">
+                <div class="subheading">
+                    <h2 class="subheading__text">Направление перевозки</h2>
+                    <div class="subheading__line"></div>
+                </div>
+                <form action="#" class="form_mb form-city" autocomplete="off">
+                    <div class="field">
+                        <select type="text" class="field__entry" placeholder=" " disabled></select>
+                        <label for="" class="field__label">Пункт отправления</label>
+                    </div>
+                    <div class="field">
+                        <select type="text" class="field__entry" placeholder=" " disabled></select>
+                        <label for="" class="field__label">Пункт назначения</label>
+                    </div>
+                </form>
+                <div class="subheading">
+                    <h2 class="subheading__text">Личная информация</h2>
+                    <div class="subheading__line"></div>
+                </div>
+                <form action="#" class="form_mb form-info">
+                    <div class="field">
+                        <input type="text" class="field__entry" placeholder=" ">
+                        <label for="" class="field__label">Имя</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field__entry" placeholder=" ">
+                        <label for="" class="field__label">Фамилия</label>
+                    </div>
+                    <div class="field">
+                        <input type="tel" class="field__entry" placeholder=" ">
+                        <label for="" class="field__label">Телефон</label>
+                    </div>
+                    <div class="field field_size_large">
+                        <textarea type="tel" class="field__entry" placeholder=" "></textarea>
+                        <label for="" class="field__label">Комментарий</label>
+                    </div>
+                </form>
+                <div class="subheading">
+                    <h2 class="subheading__text">Параметры груза</h2>
+                    <div class="subheading__line"></div>
+                </div>
+                <div class="form-parameter__wrap">
+                    <form action="#" class="form-parameter">
+                        <div class="field field_size_small">
+                            <input type="number" class="field__entry" placeholder=" ">
+                            <label for="" class="field__label">Вес (кг)</label>
+                        </div>
+                        <div class="field">
+                            <input type="range" min="0" max="250" step="1">
+                        </div>
+                        <div class="field field_size_small">
+                            <input type="number" class="field__entry" placeholder=" ">
+                            <label for="" class="field__label">Ширина (м)</label>
+                        </div>
+                        <div class="field field_size_small">
+                            <input type="number" class="field__entry" placeholder=" ">
+                            <label for="" class="field__label">Высота (м)</label>
+                        </div>
+                    </form>
+                    <div class="figure">
+                        <img src="assets/img/balance.png" alt="balance">
+                        <div class="figure__rect"></div>
+                        <span class="figure__num">25 кг</span>
+                    </div>
+                </div>
+                <div class="subheading">
+                    <h2 class="subheading__text">Прибытие груза</h2>
+                    <div class="subheading__line"></div>
+                </div>
+                <form action="#" class="form_mb form-date">
+                    <div class="field">
+                        <input type="datetime-local" class="field__entry" placeholder=" ">
+                        <label for="" class="field__label">Дата прибытия</label>
+                    </div>
+                </form>
+                <div class="subheading">
+                    <h2 class="subheading__text">Стоимость услуг</h2>
+                    <div class="subheading__line"></div>
+                </div>
+                <form action="#" class="form_mb form-sum">
+                    <div class="field">
+                        <input type="number" class="field__entry" placeholder=" ">
+                        <label for="" class="field__label">Итого:</label>
+                    </div>
+                </form>
+                <div class="form__btn">
+                    <button class="btn">Оформить заказ</button>
+                </div>
+            </section>
+            <div class="main__img">
+                <img src="assets/img/boy.png" alt="boy">
+            </div>
+
+        </div>
+    </main>
 </body>
 </html>
