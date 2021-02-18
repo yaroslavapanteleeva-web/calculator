@@ -1,0 +1,16 @@
+.info {
+    width: 200px;
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: .75rem;
+        text-transform: uppercase;
+    }
+    &__text {
+        width: 100%;
+        min-height: 20px;
+        margin-top: 10px;
+        padding: 0 10px;
+        border-bottom: 1px solid #000;
+    }
+}

@@ -45,7 +45,8 @@ module.exports = {
     devtool : isDev ? 'source-map' : false,
     devServer: {
         port: 3000,
-        hot: isDev,
+        //hot: isDev,
+        watchContentBase: isDev,
         open: true
     },
     plugins: [
@@ -57,14 +58,14 @@ module.exports = {
                 collapseWhitespace: isProd
             }
         }),
-        /* new CopyWebpackPlugin({
+        new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, 'src/favicon.ico'),
-                    to: path.resolve(__dirname, 'dist')
-                } 
+                    from: path.resolve(__dirname, 'src/assets/img/'),
+                    to: path.resolve(__dirname, 'dist/assets/img/')
+                }
             ]
-        }), */
+        }),
         new MiniCssExtractPlugin({
             filename: filename('css')
         })

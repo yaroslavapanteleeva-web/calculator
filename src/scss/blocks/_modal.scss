@@ -1,0 +1,26 @@
+.modal {
+    max-width: 800px;
+    min-height: 200px;
+    padding: 40px 30px;
+    background: #FFFFFF;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-top: 50px;
+    &__wrap {
+        margin-top: 25px;
+    }
+    &_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 200px);
+        grid-gap: 30px;
+        margin-bottom: 40px;
+    }
+    &__btns {
+        margin: 0 auto;
+        margin-top: 50px;
+        max-width: 420px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
