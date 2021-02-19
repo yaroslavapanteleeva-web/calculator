@@ -1,5 +1,7 @@
 .main {
+    position: relative;
     max-width: 1920px;
+    margin: 0 auto;
     height: 100%;
     padding: 65px 30px 65px 70px;
     &__wrap {

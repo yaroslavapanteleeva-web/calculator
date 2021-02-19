@@ -1,12 +1,32 @@
+.overlay-modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .56);
+    z-index: 100;
+    &.open {
+        display: block;
+    }
+}
+
 .modal {
-    max-width: 800px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 720px;
     min-height: 200px;
     padding: 40px 30px;
     background: #FFFFFF;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     border-radius: 30px;
-    margin: 0 auto;
-    margin-top: 50px;
+    &.open {
+        display: block;
+    }
     &__wrap {
         margin-top: 25px;
     }
