@@ -15,11 +15,11 @@ function calcTotal() {
     }
     if (weight > number) {
         sum = width * 1000 + height * 1200 + 3500;
-        $result.textContent = numberWithSpaces(sum);
+        $result.textContent = `${numberWithSpaces(sum)} ₽`;
         return;
     }
     sum = width * 1000 + height * 1200;
-    $result.textContent = numberWithSpaces(sum);
+    $result.textContent = `${numberWithSpaces(sum)} ₽`;
     
 }
 
@@ -27,6 +27,8 @@ calcTotal();
 
 function getInformation(selector) {
     const $input = document.querySelector(selector);
+    const $figure = document.querySelector('.figure__rect');
+    const $figureWeight = document.querySelector('.figure__num');
 
     $input.addEventListener('input', () => {
         switch($input.getAttribute('id')) {
@@ -39,10 +41,13 @@ function getInformation(selector) {
             case 'height':
                 height = +$input.value;
                 break;
+            case 'slider': {
+                weight = +$input.value;
+                break;
+            }
         }
+        console.log(width, height, weight);
         if (width && height && weight) {
-            const $figure = document.querySelector('.figure__rect');
-            const $figureWeight = document.querySelector('.figure__num');
             $figureWeight.innerHTML = `${weight} кг`;
             if (width > height) {
                 $figure.style.width = 70 + 'px';
@@ -54,8 +59,14 @@ function getInformation(selector) {
                 $figure.style.width = 40 + 'px';
                 $figure.style.height = 70 + 'px';
             }
-        }
-        calcTotal();
+            calcTotal();
+            return;
+        } 
+        $figureWeight.innerHTML = '';
+        $figure.style.width = '';
+        $figure.style.height = '';
+        
+        
     });
     
 }
@@ -63,6 +74,7 @@ function getInformation(selector) {
 getInformation('#weight');
 getInformation('#width');
 getInformation('#height');
+getInformation('#slider')
 
 
 

@@ -1,11 +1,11 @@
 import IMask from 'imask';
 
+
 import './scss/style.scss';
 
 import './scripts/api';
 import './scripts/slider';
 import './scripts/calc';
-import './scripts/figure';
 import './scripts/modal';
 
 const phoneMask = IMask(

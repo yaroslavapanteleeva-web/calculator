@@ -9,9 +9,9 @@ sliderHandler = () => {
     $slider.style.background = color;
 }
 
-$output.innerHTML = $slider.value;
+$output.innerHTML = '';
 
-$slider.addEventListener('input', (e) => {
+$slider.addEventListener('input', () => {
     $output.innerHTML = $slider.value;
     $input.value = $slider.value;
 })
@@ -24,6 +24,7 @@ $slider.addEventListener('mousemove', () => {
 $slider.addEventListener('mouseup', () => {
     $input.value = $slider.value;
 })
+
 
 $input.addEventListener('input', () => {
     $slider.value = $input.value;

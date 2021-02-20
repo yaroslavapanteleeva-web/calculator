@@ -1,40 +1,43 @@
 @import '../base/variables.scss';
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
+    &__btn {
+        position: relative;
+        display: inline-block;
+        width: 40px;
         height: 20px;
-    &__input {
-        display: none;
-    }
-    &__slider {
-        position: absolute;
+        margin: 0;
+        vertical-align: top;
+        background-color: #fff;
+        border: 1px solid #bbc1e1;
+        border-radius: 30px;
+        outline: none;
         cursor: pointer;
-        top: 0;
-        left: 0;
-        background-color: #ccc;
-        transition: .4s;
-        border-radius: 34px;
-        &::before {
-            position: absolute;
+        transition: .3s;
+        appearance: none;
+        &::after {
             content: '';
+            position: absolute;
+            left: 3px;
+            top: 3px;
             width: 12px;
             height: 12px;
-            left: 4px;
-            bottom: 4px;
-            background-color: #fff;
-            transition: .4s;
+            background-color: $main-color;
             border-radius: 50%;
+            transition: .3s;
+            transform: translateX(0);
+        }
+        &:checked::after {
+            transform: translateX(calc(100% + 6px));
+            background-color: #fff;
+        }
+        &:checked {
+            background-color: $main-color;
         }
     }
-    &__input:checked + &__slider {
-        background-color: $main-color;
-    }
-    &__input:focus + &__slider {
-        box-shadow: 0 0 1px $main-color;
-    }
-    &__input:checked + &__slider::before {
-        transform: translateX(20px);
+    &__text {
+        font-weight: 400;
+        margin-left: 5px;
+
     }
 }

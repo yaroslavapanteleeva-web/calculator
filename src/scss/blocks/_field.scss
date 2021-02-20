@@ -4,33 +4,17 @@
     position: relative;
     width: 300px;
     height: 40px;
-   /*  &.success {
-        .field__entry {
-            border-color: #2ecc71;
-        }
-        .field__label {
-            color: #2ecc71;
-        }
-        .field__entry:focus + .field__label {
-            color: #2ecc71; 
-        }
-    }
-    &.error {
-        .field__entry {
-            border-color: #e74c3c;
-        }
-        .field__label {
-            color: #e74c3c;
-        }
-        .field__entry:focus + .field__label {
-            color: #e74c3c; 
-        }
-    } */
     &_size_large {
         height: 60px;
     }
     &_size_small {
         width: 150px;
+    }
+    & input[type=number] {
+        appearance: none;
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
     }
     &__entry {
         position: absolute;
@@ -49,6 +33,7 @@
         &_pt {
             padding: 13px 15px;
         }
+        
         &:valid:focus {
             border-color: #2ecc71;
         }
@@ -61,6 +46,14 @@
         &:invalid:focus:not(:placeholder-shown) + .field__label {
             color: #e74c3c;
         }
+        &_required_false {
+            &:valid:focus {
+                border-color: $main-color;
+            }
+            &:valid:focus + .field__label {
+                color: $main-color;
+            }
+        }
     }
     &__label {
         position: absolute;
@@ -72,7 +65,13 @@
         font-size: .875rem;
         color: rgba(31, 32, 65, 0.25);
         transition: .3s;
+        & .mask-phone {
+            display: inline;
+            margin-left: 5px;
+            font-size: .75rem;
+        }
         & span {
+            display: none;
             margin-left: 5px;
             font-size: .75rem;
         }
@@ -104,6 +103,14 @@
     font-weight: 700;
     z-index: 10;
     font-size: .75rem;
+    & .mask-phone {
+        color: $main-color; 
+    }
+    & span {
+        color: #e74c3c;
+        display: inline;
+    }
+    
 }
 .field__entry:not(:placeholder-shown).field__entry:not(:focus) + .field__label {
     top: -.5rem;
