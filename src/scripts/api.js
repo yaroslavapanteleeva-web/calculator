@@ -10,7 +10,8 @@ fetch('https://api.hh.ru/areas/1255')
             $option.classList.add('field__option');
             $option.innerHTML = item.name;
             $option.value = item.name;
-            $selectStart.appendChild($option);
+            $selectStart.append($option);
+           
         });
         arrCity.map(item => {
             const $option = document.createElement('option');
@@ -22,3 +23,5 @@ fetch('https://api.hh.ru/areas/1255')
     }).catch(err => {
 	    console.error(err);
     });
+
+

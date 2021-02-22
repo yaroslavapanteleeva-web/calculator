@@ -17,9 +17,13 @@ const ru = {
 
 i18n.setLocale('calendar', ru);
 const dateX = new Date();
-console.log(dateX);
+
+
 const currentDate = dateX.getDate();
-console.log(currentDate);
+
+
+
+const arr = [];
 
 const calendar = new Calendar(null, {
   value: new Date(),
@@ -30,15 +34,18 @@ const calendar = new Calendar(null, {
   timeFormat: 24,
   css: "dhx_widget--bordered",
   disabledDates: function(date) {
-
-    const disabled = {
-        
-        
-        [currentDate + 0]: true,
-        [currentDate + 1]: true,
-        [currentDate + 2]: true
-    }
+    
+    arr.push(date.getDate());
+    
   
+    const disabled = {}
+    for (let i = 0; i < arr.length; i++) {
+      if (i < currentDate + 2) {
+        disabled[arr[i]] = true;
+      } else{
+        disabled[arr[i]] = false;
+       }
+    }
     return disabled[date.getDate()];
 }
 });

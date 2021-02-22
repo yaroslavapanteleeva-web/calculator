@@ -81,7 +81,7 @@ $closeModalBtn.addEventListener('click', () => {
 })
 
 $openModalMiniBtn.addEventListener('click', () => {
-    $cityStart.value = '';
+    /* $cityStart.value = '';
     $cityEnd.value = '';
     $username.value = '';
     $surname.value = '';
@@ -97,17 +97,18 @@ $openModalMiniBtn.addEventListener('click', () => {
     $figure.style.height = '';
     $output.textContent = '';
     $slider.value = $weight.value;
-    $slider.style.background = '';
+    $slider.style.background = ''; */
     
     close($modal);
     open($modalMini);
     window.scrollTo({
         top: 300
     });
+    setTimeout(() => location.reload(), 500)
 })
 
 $closeModalMiniBtn.addEventListener('click', () => {
-    location.reload();
+   
     close($modalOverlay);
     close($modalMini);
 })
