@@ -1,0 +1,114 @@
+@media (max-width: 1200px) {
+    .heading {
+        font-size: 2.8125rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .heading {
+        font-size: 2.1875rem;
+    }
+    .main__wrap {
+        column-gap: 30px;
+    }
+    .figure {
+        max-width: 250px;
+        &__wrap {
+            top: 38%;
+            left: 22px;
+        }
+        &__num {
+            right: 32px;
+        }
+    }
+    .modal {
+        width: 620px;
+    }
+    .window-thanks {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .heading {
+        font-size: 25px;
+    }
+    .main {
+        &__wrap {
+            display: block;
+        }
+        &__img {
+            display: none;
+        }
+    }
+    .modal {
+        width: 500px;
+    }
+    .window-thanks {
+        width: 400px;
+    }
+}
+
+@media (max-width: 575px) {
+    .main {
+        padding: 50px 30px;
+        &__wrap {
+            margin-top: 30px;
+        }
+    }
+    .heading {
+        font-size: 20px;
+        text-align: center;
+    }
+    .form {
+        padding: 30px 20px;
+    }
+    .subheading {
+        &__text {
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+    .field {
+        width: 200px;
+        &__label {
+            & .mask-phone {
+                font-size: 10px;
+            }
+        }
+    }
+    .figure {
+        max-width: 250px;
+        &__wrap {
+            top: 30%;
+            left: 11px;
+        }
+        &__num {
+            right: 25px;
+            font-size: 16px;
+        }
+    }
+    .modal {
+        width: 270px;
+        padding: 30px;
+    }
+    .switch {
+        &__text {
+            font-size: 13px;
+        }
+    }
+    .btn {
+        &__ok {
+            width: 100px;
+            font-size: 14px;
+        }
+        &__cancel {
+            width: 100px;
+            font-size: 14px;
+        }
+    }
+    .window-thanks {
+        width: 270px;
+        font-size: 14px;
+    }
+}   
