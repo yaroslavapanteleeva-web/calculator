@@ -7,12 +7,17 @@
     img {
         width: 100%;
     }
-    &__rect {
-        position: absolute;
-        top: 52%;
-        left: 2rem;
+    &__wrap {
         width: 70px;
-        height: 40px;
+        height: 70px;
+        position: absolute;
+        top: 42%;
+        left: 2rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    &__rect {
         background-color: brown;
     }
     &__num {

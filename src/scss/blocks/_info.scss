@@ -7,6 +7,9 @@
         text-transform: uppercase;
     }
     &__text {
+        overflow: hidden;
+        word-break: break-all;
+        text-align: center;
         width: 100%;
         min-height: 20px;
         margin-top: 10px;

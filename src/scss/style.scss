@@ -1,4 +1,5 @@
 @import "~normalize.css";
+
 @import 'libs/fonts.scss';
 
 * {
@@ -11,14 +12,17 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+@import './blocks/calendar.scss';
+
+
 @import './blocks/main.scss';
 @import './blocks/heading.scss';
 @import './blocks/form.scss';
 @import './blocks/subheading.scss';
 @import './blocks/field.scss';
+@import './blocks/slider.scss';
 @import './blocks/btn.scss';
 @import './blocks/figure.scss';
-
 @import './blocks/modal.scss';
 @import './blocks/info.scss';
 @import './blocks/switch.scss';

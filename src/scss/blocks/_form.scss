@@ -20,25 +20,35 @@
     .form-parameter {
         display: grid;
         grid-template-columns: repeat(auto-fit, 150px);
-        grid-template-rows: repeat(2, 1fr);
         grid-gap: 20px;
         &__wrap {
             margin-bottom: 20px;
             display: flex;
             flex-direction: column;
         }
-        & .field:nth-child(3) {
+        /* & .field:nth-child(3) {
             grid-column: 1/2;
             grid-row: 2/3;
         }
         & .field:nth-child(4) {
             grid-row: 2/3;
-        }
+        } */
     }
     &__btn {
         margin-top: 50px;
         display: flex;
         justify-content: center;
+    }
+    &__result {
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__title {
+        font-size: .875rem;
+        margin-right: 10px;
+    }
+    &__sum {
+        font-weight: 700;
     }
 
 

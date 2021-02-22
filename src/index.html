@@ -8,182 +8,188 @@
 <body>
     <main class="main">
         <h1 class="heading">Калькулятор стоимости доставки</h1>
-        <div class="main__wrap">
-            <section class="main__form form">
+        <section class="main__wrap">
+            <form class="main__form form" id="form">
                 <div class="subheading">
                     <h2 class="subheading__text">Направление перевозки</h2>
                     <div class="subheading__line"></div>
                 </div>
-                <form action="#" class="form_mb form-city" autocomplete="off">
+                <div class="form_mb form-city">
                     <div class="field">
-                        <select type="text" class="field__entry" placeholder=" " disabled></select>
-                        <label for="" class="field__label">Пункт отправления</label>
+                        <select id="city-start" name="city-start" class="field__entry" required>
+                            <option class="field__option " value="" selected disabled></option>
+                        </select> 
+                        <label for="" class="field__label">Пункт отправления<span>&#9913;</span></label>
                     </div>
                     <div class="field">
-                        <select type="text" class="field__entry" placeholder=" " disabled></select>
-                        <label for="" class="field__label">Пункт назначения</label>
+                        <select id="city-end" value="" name="city-end" class="field__entry" placeholder=" " required>
+                            <option class="field__option" selected></option>
+                        </select>
+                        <label for="" class="field__label">Пункт назначения<span>&#9913;</span></label>
                     </div>
-                </form>
+                </div>
                 <div class="subheading">
                     <h2 class="subheading__text">Личная информация</h2>
                     <div class="subheading__line"></div>
                 </div>
-                <form action="#" class="form_mb form-info">
+                <div class="form_mb form-info">
                     <div class="field">
-                        <input type="text" class="field__entry" placeholder=" ">
-                        <label for="" class="field__label">Имя</label>
+                        <input type="text" class="field__entry" id="username" placeholder=" " required>
+                        <label for="" class="field__label">Имя<span>&#9913;</span></label>
                     </div>
                     <div class="field">
-                        <input type="text" class="field__entry" placeholder=" ">
-                        <label for="" class="field__label">Фамилия</label>
+                        <input type="text" class="field__entry" id="surname" placeholder=" " required>
+                        <label for="" class="field__label">Фамилия<span>&#9913;</span></label>
                     </div>
                     <div class="field">
-                        <input type="tel" class="field__entry" placeholder=" ">
-                        <label for="" class="field__label">Телефон</label>
+                        <input type="tel" class="field__entry" id="tel" placeholder=" " required>
+                        <label for="" class="field__label">Телефон<span class="mask-phone">+7-XXX-XXX-XX-XX</span><span>&#9913;</span></label>
                     </div>
                     <div class="field field_size_large">
-                        <textarea type="tel" class="field__entry" placeholder=" "></textarea>
+                        <textarea id="comment" class="field__entry field__entry_pt field__entry_required_false" placeholder=" "></textarea>
                         <label for="" class="field__label">Комментарий</label>
                     </div>
-                </form>
+                </div>
                 <div class="subheading">
                     <h2 class="subheading__text">Параметры груза</h2>
                     <div class="subheading__line"></div>
                 </div>
                 <div class="form-parameter__wrap">
-                    <form action="#" class="form-parameter">
+                    <div class="form-parameter" id="form-parameter">
                         <div class="field field_size_small">
-                            <input type="number" class="field__entry" placeholder=" ">
-                            <label for="" class="field__label">Вес (кг)</label>
+                            <input id="weight" type="number" min="0" max="250" class="field__entry" placeholder=" " required>
+                            <label for="" class="field__label">Вес (кг)<span>&#9913;</span></label>
                         </div>
-                        <div class="field">
-                            <input type="range" min="0" max="250" step="1">
-                        </div>
+                        
                         <div class="field field_size_small">
-                            <input type="number" class="field__entry" placeholder=" ">
-                            <label for="" class="field__label">Ширина (м)</label>
+                            <input id="width" type="number" min="0" step="0.01" class="field__entry" placeholder=" " required>
+                            <label for="" class="field__label">Ширина (м)<span>&#9913;</span></label>
                         </div>
                         <div class="field field_size_small">
-                            <input type="number" class="field__entry" placeholder=" ">
-                            <label for="" class="field__label">Высота (м)</label>
+                            <input id="height" type="number" min="0" step="0.01" class="field__entry" placeholder=" " required>
+                            <label for="" class="field__label">Высота (м)<span>&#9913;</span></label>
                         </div>
-                    </form>
+                    </div>
+                    <div class="slider__container">
+                        <input type="range" min="1" max="250" step="1" value="1" class="slider" id="slider">
+                        <p>Вес (кг): <span id="value"></span></p>
+                    </div>
                     <div class="figure">
                         <img src="assets/img/balance.png" alt="balance">
-                        <div class="figure__rect"></div>
-                        <span class="figure__num">25 кг</span>
+                        <div class="figure__wrap">
+                            <div class="figure__rect"></div>
+                        </div>
+                        <span class="figure__num"></span>
                     </div>
                 </div>
                 <div class="subheading">
                     <h2 class="subheading__text">Прибытие груза</h2>
                     <div class="subheading__line"></div>
                 </div>
-                <form action="#" class="form_mb form-date">
+                <div class="form_mb form-date">
                     <div class="field">
-                        <input type="datetime-local" class="field__entry" placeholder=" ">
-                        <label for="" class="field__label">Дата прибытия</label>
+                        <input type="text" id="date" class="field__entry" placeholder=" " required readonly>
+                        <label for="" class="field__label">Дата прибытия<span>&#9913;</span></label>
                     </div>
-                </form>
+                </div>
                 <div class="subheading">
                     <h2 class="subheading__text">Стоимость услуг</h2>
                     <div class="subheading__line"></div>
                 </div>
-                <form action="#" class="form_mb form-sum">
-                    <div class="field">
-                        <input type="number" class="field__entry" placeholder=" ">
-                        <label for="" class="field__label">Итого:</label>
-                    </div>
-                </form>
-                <div class="form__btn">
-                    <button class="btn">Оформить заказ</button>
+                <div class="form__result">
+                    <div  class="form__title">Итого:</div>
+                    <div id="sum" class="form__sum"></div>
                 </div>
-            </section>
+                <div class="form__btn">
+                    <button class="btn" data-open="modal">Оформить заказ</button>
+                </div>
+            </form>
             <div class="main__img">
                 <img src="assets/img/boy.png" alt="boy">
             </div>
 
-        </div>
-        <div class="modal">
-            <div class="subheading">
-                <h2 class="subheading__text subheading__text_center">Информация об услуге</h2>
-                <div class="subheading__line"></div>
+        </section>
+        <div class="overlay-modal">
+            <div class="modal">
+                <div class="subheading">
+                    <h2 class="subheading__text subheading__text_center">Информация об услуге</h2>
+                    <div class="subheading__line"></div>
+                </div>
+                <div class="modal__wrap">
+                    <div class="modal_grid modal-city">
+                        <div class="info">
+                            <h2 class="info__title">Откуда</h2>
+                            <div class="info__text" data-modal="city-start"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="info__title">Куда</h2>
+                            <div class="info__text" data-modal="city-end"></div>
+                        </div>
+                    </div>
+                    <div class="modal_grid modal-info">
+                        <div class="info">
+                            <h2 class="info__title">Имя</h2>
+                            <div class="info__text" data-modal="username"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="info__title">Фамилия</h2>
+                            <div class="info__text" data-modal="surname"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="info__title">Телефон</h2>
+                            <div class="info__text" data-modal="tel"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="info__title">Комментарий</h2>
+                            <div class="info__text" data-modal="comment"></div>
+                        </div>
+                    </div>
+                    <div class="modal_grid modal-paremeter">
+                        <div class="info">
+                            <h2 class="info__title">Вес (кг)</h2>
+                            <div class="info__text" data-modal="weight"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="info__title">Ширина (м)</h2>
+                            <div class="info__text" data-modal="width"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="info__title">Высота (м)</h2>
+                            <div class="info__text" data-modal="height"></div>
+                        </div>
+                    </div>
+                    <div class="modal_grid modal-date">
+                        <div class="info">
+                            <h2 class="info__title">Дата прибытия</h2>
+                            <div class="info__text" data-modal="date"></div>
+                        </div>
+                    </div>
+                    <div class="modal_grid modal-sum">
+                        <div class="info">
+                            <h2 class="info__title">К оплате</h2>
+                            <div class="info__text" data-modal="sum"></div>
+                        </div>
+                    </div>
+                    <div class="switch">
+                        <input type="checkbox" class="switch__btn">
+                        <label for="" class="switch__text">Получить уведомление о прибытие груза</label>
+                    </div>
+                    <div class="modal__btns">
+                        <button class="btn btn__ok" data-open="modal-mini">Отправить</button>
+                        <button class="btn btn__cancel" data-close="modal">Отменить</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal__wrap">
-                <div class="modal_grid modal-city">
-                    <div class="info">
-                        <h2 class="info__title">Откуда</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                    <div class="info">
-                        <h2 class="info__title">Куда</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
+            <div class="window-thanks">
+                <div class="window-thanks__close" data-close="modal-mini">&times;</div>
+                <h2 class="window-thanks__title">Спасибо, что воспользовались нашими услугами !</h2>
+                <div class="window-thanks__img">
+                    <img src="assets/img/train.png" alt="train">
                 </div>
-                <div class="modal_grid modal-info">
-                    <div class="info">
-                        <h2 class="info__title">Имя</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                    <div class="info">
-                        <h2 class="info__title">Фамилия</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                    <div class="info">
-                        <h2 class="info__title">Телефон</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                    <div class="info">
-                        <h2 class="info__title">Комментарий</h2>
-                        <div class="info__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, veniam?</div>
-                    </div>
-                </div>
-                <div class="modal_grid modal-paremeter">
-                    <div class="info">
-                        <h2 class="info__title">Вес (кг)</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                    <div class="info">
-                        <h2 class="info__title">Ширина (м)</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                    <div class="info">
-                        <h2 class="info__title">Высота (м)</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                </div>
-                <div class="modal_grid modal-date">
-                    <div class="info">
-                        <h2 class="info__title">Дата прибытия</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                </div>
-                <div class="modal_grid modal-sum">
-                    <div class="info">
-                        <h2 class="info__title">К оплате</h2>
-                        <div class="info__text">г. Томск</div>
-                    </div>
-                </div>
-                <div class="modal__notification">
-                    <label for="" class="switch">
-                        <input class="switch__input" type="checkbox" disabled>
-                        <span class="switch__slider"></span>
-                    </label>
-                    <span class="modal__notification_text">Получить уведомление о прибытие груза</span>
-                </div>
-                <div class="modal__btns">
-                    <button class="btn btn__ok">Отправить</button>
-                    <button class="btn btn__cancel">Отменить</button>
-                </div>
-                
-            </div>
-        </div>
-        <div class="window-thanks">
-            <div class="window-thanks__close">&times;</div>
-            <h2 class="window-thanks__title">Спасибо, что воспользовались нашими услугами !</h2>
-            <div class="window-thanks__img">
-                <img src="assets/img/train.png" alt="train">
             </div>
         </div>
+        
+        
     </main>
 </body>
 </html>
