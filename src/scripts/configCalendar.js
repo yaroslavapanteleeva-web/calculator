@@ -29,7 +29,6 @@ const calendar = new Calendar(null, {
   value: new Date(),
   dateFormat: "%d/%m/%y",
   weekStart:"monday",
-  width: '300',
   timePicker: true,
   timeFormat: 24,
   css: "dhx_widget--bordered",
