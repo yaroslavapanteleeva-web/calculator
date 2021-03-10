@@ -70,7 +70,7 @@ form.addEventListener('submit', (e) => {
         open($modalOverlay);
         open($modal);
         window.scrollTo({
-            top: 300
+            top: 200
         });
     }
 })

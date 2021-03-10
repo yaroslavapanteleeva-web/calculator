@@ -21,10 +21,18 @@ $slider.addEventListener('mousemove', () => {
     
 })
 
+$slider.addEventListener('touchmove', () => {
+    sliderHandler();
+    
+})
+
 $slider.addEventListener('mouseup', () => {
     $input.value = $slider.value;
 })
 
+$slider.addEventListener('touchend', () => {
+    $input.value = $slider.value;
+})
 
 $input.addEventListener('input', () => {
     $slider.value = $input.value;
