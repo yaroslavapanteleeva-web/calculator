@@ -47,7 +47,7 @@ function getInformation(selector) {
             }
         }
         console.log(width, height, weight);
-        if (width && height && weight) {
+        if ((width <= 50 && width !==0) && (height <= 50 && height !==0) && (weight <= 250 && weight !== 0)) {
             $figureWeight.innerHTML = `${weight} кг`;
             if (width > height) {
                 $figure.style.width = 70 + 'px';
